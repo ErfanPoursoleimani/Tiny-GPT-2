@@ -1,0 +1,7 @@
+# Experiment C: learning rate. Run with --override training.learning_rate=1e-4|3e-4|6e-4
+# (min_learning_rate should stay at 10% of peak: --override training.min_learning_rate=...)
+base: ../small.yaml
+experiment_name: learning_rate
+training:
+  learning_rate: 6.0e-4
+  min_learning_rate: 6.0e-5

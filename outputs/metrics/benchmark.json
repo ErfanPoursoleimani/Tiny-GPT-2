@@ -1,0 +1,93 @@
+{
+  "hardware": {
+    "platform": "Linux-6.18.44-fc-v80-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "pytorch": "2.14.1+cu130",
+    "cuda_available": false,
+    "cuda_version": "13.0",
+    "cpu": "x86_64",
+    "system_ram_gb": 3.9,
+    "cpu_count": 1
+  },
+  "batch_size": 2,
+  "context_length": 256,
+  "parameters": {
+    "embedding": 12386304,
+    "attention": 3548160,
+    "mlp": 7089408,
+    "layernorm": 9984,
+    "lm_head": 0,
+    "other": 0,
+    "total": 23033856,
+    "trainable": 23033856
+  },
+  "train_step": [
+    {
+      "forward_ms": 354.24113233331883,
+      "backward_ms": 556.1460526666716,
+      "tokens_per_sec": 562.3980746170162,
+      "peak_vram_mb": 0.0,
+      "cpu_rss_mb": 846.77734375,
+      "loss": 10.476587295532227,
+      "num_params": 23033856.0,
+      "scaler_free": 1.0,
+      "attention": "manual",
+      "precision": "fp32"
+    },
+    {
+      "forward_ms": 246.19502233336257,
+      "backward_ms": 298.2665933333048,
+      "tokens_per_sec": 940.3785046868369,
+      "peak_vram_mb": 0.0,
+      "cpu_rss_mb": 875.26953125,
+      "loss": 10.457189559936523,
+      "num_params": 23033856.0,
+      "scaler_free": 1.0,
+      "attention": "manual",
+      "precision": "mixed(bfloat16)"
+    },
+    {
+      "forward_ms": 357.3734353332914,
+      "backward_ms": 533.6061480000088,
+      "tokens_per_sec": 574.6484089843275,
+      "peak_vram_mb": 0.0,
+      "cpu_rss_mb": 918.38671875,
+      "loss": 10.428622245788574,
+      "num_params": 23033856.0,
+      "scaler_free": 1.0,
+      "attention": "sdpa",
+      "precision": "fp32"
+    },
+    {
+      "forward_ms": 270.4697279999853,
+      "backward_ms": 285.6354073333402,
+      "tokens_per_sec": 920.689214087388,
+      "peak_vram_mb": 0.0,
+      "cpu_rss_mb": 868.6328125,
+      "loss": 10.462504386901855,
+      "num_params": 23033856.0,
+      "scaler_free": 1.0,
+      "attention": "sdpa",
+      "precision": "mixed(bfloat16)"
+    }
+  ],
+  "generation": [
+    {
+      "seconds": 1.307803813000021,
+      "tokens_per_sec": 48.93700367273587,
+      "kv_cache": false
+    },
+    {
+      "seconds": 0.37062950300003195,
+      "tokens_per_sec": 172.67918361047066,
+      "kv_cache": true
+    }
+  ],
+  "kv_cache_speedup": 3.528601480492254,
+  "kv_cache_max_abs_logit_diff": 1.9669532775878906e-06,
+  "manual_vs_sdpa": {
+    "max_abs_logit_diff": 2.1457672119140625e-06,
+    "loss_manual": 9.307870864868164,
+    "loss_sdpa": 9.307870864868164
+  }
+}

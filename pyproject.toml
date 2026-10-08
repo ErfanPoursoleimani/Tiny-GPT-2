@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mini-gpt"
+version = "0.1.0"
+description = "A small GPT-2-style language model implemented from scratch for consumer GPUs"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.1", "numpy", "pyyaml", "tqdm", "matplotlib", "tensorboard", "tokenizers", "datasets"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

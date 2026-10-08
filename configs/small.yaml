@@ -1,0 +1,3 @@
+# Recommended RTX 3050 (6 GB) configuration: 6 layers, 384 dim, 6 heads, context 256.
+base: base.yaml
+experiment_name: small

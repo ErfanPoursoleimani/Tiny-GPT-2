@@ -1,0 +1,22 @@
+{
+  "train_subset": {
+    "loss": 6.465669870376587,
+    "perplexity": 642.6947414496927,
+    "bits_per_token": 9.327989858017489,
+    "tokens": 102400
+  },
+  "validation": {
+    "loss": 6.059834448496501,
+    "perplexity": 428.30452453163593,
+    "bits_per_token": 8.742493107454008,
+    "tokens": 30720
+  },
+  "test": {
+    "loss": 6.13490571975708,
+    "perplexity": 461.69556319703645,
+    "bits_per_token": 8.850798058214878,
+    "tokens": 30720
+  },
+  "checkpoint": "checkpoints/small_short/best.pt",
+  "step": 200
+}

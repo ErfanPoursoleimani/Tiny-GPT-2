@@ -1,0 +1,22 @@
+# Debug / CI / overfitting configuration: runs in seconds on CPU.
+base: base.yaml
+experiment_name: tiny
+model:
+  vocab_size: 8000
+  context_length: 128
+  embedding_dim: 192
+  num_layers: 4
+  num_heads: 4
+tokenizer:
+  vocab_size: 8000
+training:
+  batch_size: 8
+  gradient_accumulation_steps: 2
+  max_steps: 300
+  warmup_steps: 20
+  learning_rate: 1.0e-3
+  min_learning_rate: 1.0e-4
+  eval_interval: 50
+  eval_iters: 10
+  checkpoint_interval: 100
+  sample_steps: [0, 100, 300]

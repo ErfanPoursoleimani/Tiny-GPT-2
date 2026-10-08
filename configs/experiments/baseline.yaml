@@ -1,0 +1,2 @@
+base: ../small.yaml
+experiment_name: baseline

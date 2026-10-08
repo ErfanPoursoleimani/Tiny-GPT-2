@@ -1,0 +1,9 @@
+# Experiment B: context length. Run with: --override model.context_length=128|256|512
+# Keep tokens/update constant by scaling batch size inversely (see docs/experiments.md).
+base: ../small.yaml
+experiment_name: context_length
+model:
+  context_length: 512
+training:
+  batch_size: 4
+  gradient_accumulation_steps: 8   # 4 x 8 x 512 = 16,384 tokens/update (same as 8 x 8 x 256)

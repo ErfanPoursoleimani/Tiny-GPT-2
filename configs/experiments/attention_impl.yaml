@@ -1,0 +1,5 @@
+# Experiment D: attention implementation. Run twice with attention.implementation=manual|sdpa
+base: ../small.yaml
+experiment_name: attention_impl
+attention:
+  implementation: manual

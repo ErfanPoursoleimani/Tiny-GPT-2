@@ -1,0 +1,59 @@
+# Base configuration: everything not overridden by small/tiny/experiment configs.
+experiment_name: base
+output_dir: outputs
+
+model:
+  vocab_size: 32000
+  context_length: 256
+  embedding_dim: 384
+  num_layers: 6
+  num_heads: 6
+  dropout: 0.1
+  bias: true
+  tie_embeddings: true
+  activation: gelu          # gelu (exact) | gelu_new (GPT-2 tanh approximation)
+
+attention:
+  implementation: auto      # auto | manual | sdpa
+
+position_encoding:
+  type: learned             # learned | rope
+
+data:
+  dataset: wikitext2        # wikitext2 | tinyshakespeare | custom
+  raw_dir: data/raw
+  processed_dir: data/processed
+  tokenizer_dir: data/tokenizer
+  num_workers: 0
+
+tokenizer:
+  vocab_size: 32000
+  min_frequency: 2
+
+training:
+  batch_size: 8
+  gradient_accumulation_steps: 8
+  max_steps: 10000
+  learning_rate: 3.0e-4
+  min_learning_rate: 3.0e-5
+  weight_decay: 0.1
+  warmup_steps: 500
+  gradient_clip: 1.0
+  beta1: 0.9
+  beta2: 0.95
+  eps: 1.0e-8
+  optimizer: adamw
+  eval_interval: 250
+  eval_iters: 50
+  log_interval: 10
+  checkpoint_interval: 1000
+  keep_last_checkpoints: 3
+  sample_steps: [0, 1000, 5000]
+  sample_max_new_tokens: 60
+  gradient_checkpointing: false
+  seed: 42
+  checkpoint_dir: checkpoints
+
+precision:
+  mixed_precision: true
+  dtype: bfloat16           # auto-falls back to float16, then float32, if unsupported

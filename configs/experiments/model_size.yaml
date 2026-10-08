@@ -1,0 +1,13 @@
+# Experiment A: model size. Medium variant shown; tiny/small via configs/tiny.yaml-like overrides:
+#   tiny  : layers=4 dim=256 heads=4
+#   small : layers=6 dim=384 heads=6
+#   medium: layers=8 dim=512 heads=8   (this file)
+base: ../small.yaml
+experiment_name: model_size_medium
+model:
+  num_layers: 8
+  embedding_dim: 512
+  num_heads: 8
+training:
+  batch_size: 4
+  gradient_accumulation_steps: 16  # keep 64 sequences/update
